@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
+  resources :users, only: [:show] do
+    resources :capitals, :categories, only: [:create, :destroy, :new, :edit]
+  end
   get 'home/index'
 
   root 'home#index'
