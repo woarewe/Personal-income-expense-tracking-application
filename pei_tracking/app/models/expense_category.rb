@@ -1,0 +1,2 @@
+class ExpenseCategory < Category
+end
