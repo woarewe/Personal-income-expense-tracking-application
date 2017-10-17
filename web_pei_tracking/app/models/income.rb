@@ -1,0 +1,2 @@
+class Income < Capital
+end
