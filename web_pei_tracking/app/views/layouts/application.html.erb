@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= render 'components/header' if current_user %>
     <%= yield %>
   </body>
 </html>
