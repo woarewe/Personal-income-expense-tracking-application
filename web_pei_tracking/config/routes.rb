@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show] do
-    resources :capitals, only: [:create, :destroy, :edit]
-    resources :categories, only: [:create, :destroy, :edit]
+    resources :capitals, except: [:index]
+    resources :categories, except: [:index]
   end
 
   authenticated :user do

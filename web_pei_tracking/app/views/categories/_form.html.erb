@@ -1,0 +1,60 @@
+<div class="category-form">
+  <%= form_for [current_user, @category], class: 'form' do |f| %>
+      <div class="form-group row">
+        <label class="col-md-4">Category type:</label>
+        <label class="form-check-label col-md-4">
+          <%= radio_button_tag(:type, 'IncomeCategory') %>
+          Income
+        </label>
+        <label class="form-check-label col-md-4">
+          <%= radio_button_tag(:type, 'ExpenseCategory') %>
+          Expense
+        </label>
+      </div>
+      <div class="form-group row">
+        <%= f.label :title , class: 'col-md-2 col-form-label'%>
+        <%= f.text_field :title, class: 'form-control col-md-10', placeholder: 'Enter title' %>
+      </div>
+      <%= f.submit 'Create category', class: 'btn btn-outline-info btn-block w-100' %>
+  <% end %>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+      </div>
+      <div class="modal-body">
+        <%= form_for [current_user, @category], class: 'form' do |f| %>
+            <div class="form-group row">
+              <label class="col-md-4">Category type:</label>
+              <label class="form-check-label col-md-4">
+                <%= radio_button_tag(:type, 'IncomeCategory') %>
+                Income
+              </label>
+              <label class="form-check-label col-md-4">
+                <%= radio_button_tag(:type, 'ExpenseCategory') %>
+                Expense
+              </label>
+            </div>
+            <div class="form-group row">
+              <%= f.label :title , class: 'col-md-2 col-form-label'%>
+              <%= f.text_field :title, class: 'form-control col-md-10', placeholder: 'Enter title' %>
+            </div>
+            <%= f.submit 'Create category', class: 'btn btn-outline-info btn-block w-100' %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
