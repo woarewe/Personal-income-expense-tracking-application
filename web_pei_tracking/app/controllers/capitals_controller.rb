@@ -17,7 +17,6 @@ class CapitalsController < ApplicationController
 
   def new
     @capital = Capital.new(type: 'Income')
-    @categories = Category.all
     @grouped_categories = grouped_categories
   end
 
@@ -30,7 +29,7 @@ class CapitalsController < ApplicationController
   private
 
   def grouped_categories
-    incomes, expenses = Category.all.partition { |x| x.type == 'IncomeCategory' }
+    incomes, expenses = current_user.categories.partition { |x| x.type == 'IncomeCategory' }
     [['Income', incomes.collect { |c| [c.title, c.id] }],
      ['Expense', expenses.collect { |c| [c.title, c.id] }]]
   end
