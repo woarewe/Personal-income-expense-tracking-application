@@ -1,3 +1,20 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-page {
+  margin-top: 3%;
+}
+
+.card-header {
+  background-color: cadetblue;
+  color: white;
+}e
+
+.card {
+  box-shadow: darkgray 5px 5px;
+}
+
+.manage-block {
+  margin-top: 2%;
+}
+
+.card-block-category {
+  padding-left: 3%;
+}

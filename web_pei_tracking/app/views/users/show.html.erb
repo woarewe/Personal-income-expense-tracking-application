@@ -1,3 +1,42 @@
-<% @user.categories.each do |category| %>
-    <%= link_to 'Edit', edit_user_category_path(current_user, category)%> <hr>
-<% end %>
+<div class="container-fluid user-page">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="card text-center">
+        <div class="card-header">
+          <strong>Hello!</strong>
+        </div>
+        <div class="card-block">
+          <br>
+          <h3>
+            <%= @user.email %>
+          </h3>
+          <br>
+        </div>
+        <div class="card-footer">
+          You can manage your finances, as well as
+          <a href="#">look at the report</a>.
+        </div>
+      </div>
+      <div class="manage-block row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Categories</h3>
+            </div>
+          </div>
+          <%= render partial: 'categories/category', collection: @user.categories %>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h3>Transaktions</h3>
+            </div>
+          </div>
+          <%= render partial: 'capitals/capital', collection: @user.capitals %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>
