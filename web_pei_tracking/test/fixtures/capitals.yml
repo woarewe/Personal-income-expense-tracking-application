@@ -1,13 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  note: MyString
+  type: 
+  note: MyText
   value: 9.99
+  implemented_at: 2017-10-21
   user: one
   category: one
 
 two:
-  note: MyString
+  type: 
+  note: MyText
   value: 9.99
+  implemented_at: 2017-10-21
   user: two
   category: two

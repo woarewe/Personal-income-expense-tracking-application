@@ -1,0 +1,23 @@
+<%= form_for [current_user, @capital.becomes(Capital)] do |f| %>
+    <div class="form-group">
+      <%= f.label 'Choose a category: ' %>
+      <%= f.select :category_id, grouped_options_for_select(@grouped_categories) %>
+    </div><hr>
+    <div class="form-group">
+      <%= f.label 'Date of transaction: ' %>
+      <%= f.date_select :implemented_at, order: [:month, :day, :year], class: 'form-control' %>
+    </div><hr>
+    <div class="form-group">
+      <%= f.label 'Value: ' %>
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <%= f.text_field :value, class: 'form-control currency' %>
+      </div>
+    </div><hr>
+    <div class="form-group">
+      <%= f.label 'Note: ' %>
+      <%= f.text_area :note, class: 'form-control'%>
+    </div><hr>
+    <%= f.submit 'Submit', class: 'btn btn-outline-warning w-100' %>
+<% end %>
+
