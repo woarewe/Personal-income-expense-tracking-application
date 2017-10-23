@@ -11,6 +11,7 @@
             <%= link_to 'Profile', root_path, class: 'dropdown-item dropdown-item-user' %>
             <%= link_to 'Add category', new_user_category_path(current_user), class: 'dropdown-item dropdown-item-user' %>
             <%= link_to 'Add transaction', new_user_capital_path(current_user), class: 'dropdown-item dropdown-item-user' %>
+            <%= link_to 'Show report', user_report_path(current_user), class: 'dropdown-item dropdown-item-user' %>
             <div class="dropdown-divider"></div>
             <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: 'dropdown-item dropdown-item-user' %>
           </div>

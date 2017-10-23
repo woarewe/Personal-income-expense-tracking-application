@@ -9,4 +9,19 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: exception.message
   end
 
+  protected
+
+  def check_action(status, bad_path:)
+    if status
+      flash[:notice] = 'Successfully!'
+      redirect_to root_path
+    else
+      flash.now[:alert] = 'Error!'
+      render bad_path
+    end
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
+  end
 end

@@ -1,30 +1,30 @@
 class CapitalsController < ApplicationController
+  before_action :set_capital, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:create, :update]
 
   def create
-    @user = User.find(params[:user_id])
     @capital = @user.capitals.build(capital_params)
-    @capital.save!
-    redirect_to root_path
+    check_action(@capital.save, bad_path: :new)
   end
 
   def destroy
+    @capital.destroy
+    flash[:notice] = 'Transaction has successfully deleted!'
+    redirect_to root_path
   end
 
   def edit
-    @capital = Capital.find(params[:id])
     @grouped_categories = grouped_categories
   end
 
   def new
-    @user = User.find(params[:user_id])
     @capital = Capital.new(type: 'Income')
     @grouped_categories = grouped_categories
   end
 
   def update
-    @capital = Capital.find(params[:id])
-    @capital.update!(capital_params)
-    redirect_to root_path
+    @grouped_categories = grouped_categories
+    check_action(@capital.update!(capital_params), bad_path: :edit)
   end
 
   private
@@ -37,5 +37,9 @@ class CapitalsController < ApplicationController
 
   def capital_params
     params.require(:capital).permit(:implemented_at, :note, :value, :category_id, :type)
+  end
+
+  def set_capital
+    @capital = Capital.find(params[:id])
   end
 end
