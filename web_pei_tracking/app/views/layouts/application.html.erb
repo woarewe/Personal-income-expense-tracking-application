@@ -9,8 +9,10 @@
   </head>
 
   <body>
-  <%= render 'components/header' if current_user %>
-
+  <% if current_user %>
+    <%= render 'components/header' %>
+    <%= render 'components/flash' %>
+  <% end %>
   <%= yield %>
   </body>
 </html>

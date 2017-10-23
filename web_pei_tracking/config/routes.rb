@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     resources :capitals, except: [:index]
     resources :categories, except: [:index]
+    resource :report, only: [:show], controller: 'report'
   end
 
   authenticated :user do

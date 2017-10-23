@@ -14,8 +14,13 @@
 //= require popper
 //= require bootstrap
 //= require capitals
+//= require flash
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+setTimeout(function() {
+    $('#flash-message').fadeOut('f');
+}, 1000);
 
 
