@@ -18,9 +18,3 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
-
-setTimeout(function() {
-    $('#flash-message').fadeOut('f');
-}, 1000);
-
-
