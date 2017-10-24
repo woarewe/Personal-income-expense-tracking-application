@@ -1,5 +1,5 @@
 $(document).on( "turbolinks:load", function() {
-        $('#capital_category_id').change(function(){
+        var checkCategory = function(){
             var optGroup = $('#capital_category_id :selected').parent().attr('label');
             if (optGroup == 'Income') {
                 $('#capital_type_income').prop('checked', true);
@@ -7,6 +7,8 @@ $(document).on( "turbolinks:load", function() {
             else {
                 $('#capital_type_expense').prop('checked', true);
             }
-        });
+        }
+        checkCategory();
+        $('#capital_category_id').change(checkCategory);
     }
 );

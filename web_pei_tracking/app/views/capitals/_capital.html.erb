@@ -1,10 +1,14 @@
 <div class="card manage-block">
   <div class="card-header">
-    <h5> <%= capital.value %></h5>
+    <h5>$<%= capital.value %></h5>
   </div>
-  <p class="card-block card-block-category">
+  <p class="card-block padding-left">
+    Type: <%= raw type_tag(capital) %>
+  </p>
+  <p class="card-block padding-left">
     Note: <strong><%= capital.note %></strong>
   </p>
+
   <div class="card-footer">
     <%= link_to 'Edit', edit_user_capital_path(current_user, capital), class: 'btn btn-outline-warning category-link' %>
     <%= link_to 'Delete', user_capital_path(current_user, capital), method: :delete,
