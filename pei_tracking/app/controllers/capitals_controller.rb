@@ -1,2 +1,0 @@
-class CapitalsController < ApplicationController
-end
