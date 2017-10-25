@@ -1,2 +1,1 @@
-class IncomeCategory < Category
-end
+IncomeCategory = Class.new(Category)

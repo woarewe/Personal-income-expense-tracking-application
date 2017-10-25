@@ -1,2 +1,1 @@
-class Expense < Capital
-end
+Expense = Class.new(Capital)

@@ -1,5 +1,5 @@
 class CapitalsController < ApplicationController
-  before_action :set_capital, only: [:edit, :update, :destroy]
+  before_action :set_capital, only: %i[edit update destroy]
   before_action :set_user, except: [:destroy]
   before_action :set_categories, except: [:destroy]
 
@@ -28,7 +28,11 @@ class CapitalsController < ApplicationController
   private
 
   def capital_params
-    params.require(:capital).permit(:implemented_at, :note, :value, :category_id, :type)
+    params.require(:capital).permit(:implemented_at,
+                                    :note,
+                                    :value,
+                                    :category_id,
+                                    :type)
   end
 
   def set_capital
@@ -36,6 +40,6 @@ class CapitalsController < ApplicationController
   end
 
   def set_categories
-    @incomes, @expenses = @user.categories.partition { |category| category.type == 'IncomeCategory' }
+    @categories = @user.categories.partition { |c| c.instance_of? IncomeCategory }
   end
 end

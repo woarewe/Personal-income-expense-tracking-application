@@ -1,2 +1,1 @@
-class Income < Capital
-end
+Income = Class.new(Capital)

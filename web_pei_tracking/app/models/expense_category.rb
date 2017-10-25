@@ -1,2 +1,1 @@
-class ExpenseCategory < Category
-end
+ExpenseCategory = Class.new(Category)

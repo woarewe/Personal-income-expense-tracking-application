@@ -12,7 +12,6 @@
     <hr>
 <% end %>
 
-
 <%= form_for [current_user, @capital.becomes(Capital)] do |f| %>
     <div class="form-group" hidden>
       <%= f.radio_button :type, 'Income'%>
@@ -20,7 +19,11 @@
     </div>
     <div class="form-group">
       <%= f.label 'Choose a category: ' %>
-      <%= f.grouped_collection_select :category_id, [['Income',@incomes], ['Expense', @expenses]], :second, :first, :id, :title  %>
+      <%= f.grouped_collection_select :category_id,[['Income',@categories.first], ['Expense', @categories.last]],
+                                      :second,
+                                      :first,
+                                      :id,
+                                      :title %>
     </div><hr>
     <div class="form-group">
       <%= f.label 'Date of transaction: ' %>
