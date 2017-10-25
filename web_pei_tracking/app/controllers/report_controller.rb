@@ -5,7 +5,7 @@ class ReportController < ApplicationController
     @incomes, @expenses = @user.categories.partition { |category| category.type == 'IncomeCategory' }
 
     if params[:capital]
-        if params[:capital][:category_id]
+        if params[:capital][:category_id] != ''
           @capitals = @user.capitals.find_all { |x| x.category.id == params[:capital][:category_id].to_i }
         else
           @capitals = @user.capitals
@@ -13,9 +13,12 @@ class ReportController < ApplicationController
     else
       @capitals = @user.capitals
     end
-  end
 
-  private
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
 
 
 

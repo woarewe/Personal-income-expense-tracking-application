@@ -1,0 +1,22 @@
+<%if @capitals.present? %>
+    <table class="table" id="capitals">
+      <thead class="thead-default">
+      <tr>
+        <th>Type</th>
+        <th>Value</th>
+        <th>Category</th>
+        <th>Date</th>
+        <th>Note</th>
+      </tr>
+      </thead>
+      <tbody>
+      <%= render partial: 'capitals/capital_row', collection: @capitals %>
+      <tr>
+        <th><h3>Total: </h3></th>
+        <th><h3><%= total_value(@capitals) %> $</h3></th>
+      </tr>
+      </tbody>
+    </table>
+<% else %>
+    <h4>List is empty!</h4>
+<% end %>
