@@ -1,18 +1,10 @@
 class ReportController < ApplicationController
+  before_action :set_filters
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.includes(:capitals, :categories).find(params[:user_id])
     @incomes, @expenses = @user.categories.partition { |category| category.type == 'IncomeCategory' }
-
-    if params[:capital]
-        if params[:capital][:category_id] != ''
-          @capitals = @user.capitals.find_all { |x| x.category.id == params[:capital][:category_id].to_i }
-        else
-          @capitals = @user.capitals
-        end
-    else
-      @capitals = @user.capitals
-    end
+    @capitals = @filters.empty? ? @user.capitals : @user.capitals.where(@filters)
 
     respond_to do |format|
       format.html
@@ -20,6 +12,9 @@ class ReportController < ApplicationController
     end
   end
 
-
+  def set_filters
+    @filters = {}
+    params[:capital].each { |k,v| @filters[k] = v if v.present? } if params[:capital]
+  end
 
 end
