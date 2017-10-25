@@ -15,6 +15,7 @@
 //= require bootstrap
 //= require capitals
 //= require flash
+//= require report
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10 text-center">
+      <h2>Total report</h2>
+      <hr>
+      <%= render 'capitals/filter_form' %>
+      <hr>
+      <table class="table">
+        <thead class="thead-default">
+          <tr>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <div class="capitals">
+          <%= render partial: 'capitals/capital_row', collection: @capitals %>
+          </div>
+        <tr>
+          <th><h3>Total: </h3></th>
+          <th><h3><%= total_value(@capitals) %> $</h3></th>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
