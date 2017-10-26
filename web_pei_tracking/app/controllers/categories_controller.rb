@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:destroy, :edit, :update]
+  before_action :set_category, only: %i[destroy edit update]
 
   def new
     @category = Category.new(type: IncomeCategory)
@@ -17,8 +17,7 @@ class CategoriesController < ApplicationController
     redirect_to root_path
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     check_action(@category.update(category_params), bad_path: :edit)

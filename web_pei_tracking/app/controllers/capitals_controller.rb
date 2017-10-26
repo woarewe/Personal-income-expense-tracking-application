@@ -14,8 +14,7 @@ class CapitalsController < ApplicationController
     redirect_to root_path
   end
 
-  def edit
-  end
+  def edit; end
 
   def new
     @capital = Capital.new(type: 'Income')
@@ -40,6 +39,9 @@ class CapitalsController < ApplicationController
   end
 
   def set_categories
-    @categories = @user.categories.partition { |c| c.instance_of? IncomeCategory }
+    @categories = @user.categories.partition do |c|
+      c.instance_of? IncomeCategory
+    end
   end
 end
+
