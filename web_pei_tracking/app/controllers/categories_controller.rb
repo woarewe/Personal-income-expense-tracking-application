@@ -32,4 +32,9 @@ class CategoriesController < ApplicationController
   def set_category
     @category = Category.find(params[:id])
   end
+
+  def set_user
+    @user = User.includes(categories: [:capitals], capitals: [:category])
+                .find(params[:user_id])
+  end
 end

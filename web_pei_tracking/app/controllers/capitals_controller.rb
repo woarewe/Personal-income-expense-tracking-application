@@ -43,5 +43,10 @@ class CapitalsController < ApplicationController
       c.instance_of? IncomeCategory
     end
   end
+
+  def set_user
+    @user = User.includes(categories: [:capitals], capitals: [:category])
+                .find(params[:user_id])
+  end
 end
 

@@ -21,9 +21,5 @@ class ApplicationController < ActionController::Base
       render bad_path
     end
   end
-
-  def set_user
-    @user = User.find(params[:user_id])
-  end
 end
 

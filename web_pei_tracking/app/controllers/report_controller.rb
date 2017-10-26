@@ -1,5 +1,6 @@
 class ReportController < ApplicationController
-  before_action :set_capitals
+  before_action :set_capitals, only: :show
+  before_action :set_user, only: :show
 
   def show
     @categories = current_user.categories.partition do |c|
@@ -16,14 +17,19 @@ class ReportController < ApplicationController
 
   def filters(h = {})
     params[:capital].each { |k, v| h[k] = v if v.present? } if params[:capital]
-    filters
+    h
   end
 
   def set_capitals
     @capitals = if filters.empty?
-                  current_user.capitals
+                  @user.capitals
                 else
-                  current_user.capitals.where(filters)
+                  @user.capitals.where(filters)
                 end
+  end
+
+  def set_user
+    @user = User.includes(categories: [:capitals], capitals: [:category])
+                .find(params[:user_id])
   end
 end
