@@ -1,0 +1,55 @@
+en:
+  form:
+    type:
+      income: 'Income'
+      expense: 'Expense'
+    label:
+      category: 'Category:'
+      date: 'Date:'
+      value: 'Value in $:'
+      note: 'Note: '
+      type: 'Type: '
+      title: 'Title: '
+    button:
+      submit: 'Submit'
+      cancel: 'Cancel'
+      edit: 'Edit'
+      delete: 'Delete'
+      search: 'Search'
+    error: 'error'
+    confirmation: 'Are you sure?'
+  table:
+    column:
+      type: 'Type'
+      value: 'Value'
+      category: 'Category'
+      date: 'Date'
+      note: 'Note'
+    total: 'Total'
+    empty: 'Empty!'
+  category:
+    count: 'Transactions count: '
+    new: 'New category'
+    edit: 'Edit category'
+  capital:
+    new: 'New transaction'
+    edit: 'Edit transaction'
+  navbar:
+    brand: 'PeiTracking'
+    dropdown:
+        profile: 'Profile'
+        logout: 'Log out'
+        report: 'Report'
+  report:
+    title: 'Total report'
+  user:
+    hello: 'Hello!'
+    can: 'You can manage your finances, as well as'
+    link: 'look at the report'
+    categories:
+      title: 'Categories'
+    capitals:
+      title: 'Transactions'
+    empty: 'List is empty!'
+
+

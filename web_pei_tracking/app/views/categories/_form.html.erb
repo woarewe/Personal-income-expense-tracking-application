@@ -1,7 +1,7 @@
 <% if @category.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= pluralize(@category.errors.count, 'error') %> :
+        <%= pluralize(@category.errors.count, t('form.error')) %> :
       </h2>
       <ul>
         <% @category.errors.full_messages.each do |msg| %>
@@ -14,26 +14,26 @@
 
 <%= form_for [current_user, @category.becomes(Category)] do |f| %>
     <div class="form-group">
-      <label>Category type:</label>
+      <label><%= t('form.label.type') %></label>
       <label class="form-check-label">
         <%= f.radio_button :type, 'IncomeCategory' %>
-        Income
+        <%= t('form.type.income') %>
       </label>
       <label class="form-check-label">
         <%= f.radio_button :type, 'ExpenseCategory' %>
-        Expense
+        <%= t('form.type.expense') %>
       </label>
     </div><hr>
     <div class="form-group">
-      <%= f.label :title , class: 'col-form-label'%>
+      <%= f.label t('form.label.title') , class: 'col-form-label'%>
       <%= f.text_field :title, class: 'form-control', placeholder: 'Enter title' %>
     </div><hr>
     <div class="form-group row">
       <div class="col-md-6">
-        <%= link_to 'Cancel', root_path, class: 'btn btn-outline-info w-100' %>
+        <%= link_to t('form.button.cancel'), root_path, class: 'btn btn-outline-info w-100' %>
       </div>
       <div class="col-md-6">
-        <%= f.submit 'Submit', class: 'btn btn-outline-warning w-100' %>
+        <%= f.submit t('form.button.submit'), class: 'btn btn-outline-warning w-100' %>
       </div>
     </div>
 <% end %>

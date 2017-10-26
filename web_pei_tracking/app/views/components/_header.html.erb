@@ -1,19 +1,19 @@
 <header>
   <nav class="navbar navbar-default header-style">
     <div class="container">
-      <a class="navbar-brand navbar-default btn btn-info header-style" href=<%= root_path %>>PeiTracking</a>
+      <a class="navbar-brand navbar-default btn btn-info header-style" href=<%= root_path %>><%= t('navbar.brand') %></a>
       <div class="nav-item">
         <div class="btn-group">
           <button type="button" class="btn btn-info dropdown-toggle header-style" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%= current_user.email %>
           </button>
           <div class="dropdown-menu dropdown-menu-user">
-            <%= link_to 'Profile', root_path, class: 'dropdown-item dropdown-item-user' %>
-            <%= link_to 'Add category', new_user_category_path(current_user), class: 'dropdown-item dropdown-item-user' %>
-            <%= link_to 'Add transaction', new_user_capital_path(current_user), class: 'dropdown-item dropdown-item-user' %>
-            <%= link_to 'Show report', user_report_path(current_user), class: 'dropdown-item dropdown-item-user' %>
+            <%= link_to t('navbar.brand.dropdown.profile'), root_path, class: 'dropdown-item dropdown-item-user' %>
+            <%= link_to t('category.new'), new_user_category_path(current_user), class: 'dropdown-item dropdown-item-user' %>
+            <%= link_to t('capital.new'), new_user_capital_path(current_user), class: 'dropdown-item dropdown-item-user' %>
+            <%= link_to t('navbar.brand.dropdown.report'), user_report_path(current_user), class: 'dropdown-item dropdown-item-user' %>
             <div class="dropdown-divider"></div>
-            <%= link_to 'Log out', destroy_user_session_path, :method => :delete, class: 'dropdown-item dropdown-item-user' %>
+            <%= link_to t('navbar.brand.dropdown.logout'), destroy_user_session_path, :method => :delete, class: 'dropdown-item dropdown-item-user' %>
           </div>
         </div>
       </div>

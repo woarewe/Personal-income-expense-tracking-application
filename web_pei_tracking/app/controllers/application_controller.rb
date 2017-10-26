@@ -14,10 +14,10 @@ class ApplicationController < ActionController::Base
 
   def check_action(status, bad_path:)
     if status
-      flash[:notice] = 'Successfully!'
+      flash[:notice] = t('application.notice')
       redirect_to root_path
     else
-      flash.now[:alert] = 'Error!'
+      flash.now[:alert] = t('application.alert')
       render bad_path
     end
   end

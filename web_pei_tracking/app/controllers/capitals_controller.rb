@@ -10,7 +10,7 @@ class CapitalsController < ApplicationController
 
   def destroy
     @capital.destroy
-    flash[:notice] = 'Transaction has successfully deleted!'
+    flash[:notice] = t('capitals.notice')
     redirect_to root_path
   end
 

@@ -10,8 +10,8 @@
   </p>
 
   <div class="card-footer">
-    <%= link_to 'Edit', edit_user_capital_path(current_user, capital), class: 'btn btn-outline-warning category-link' %>
-    <%= link_to 'Delete', user_capital_path(current_user, capital), method: :delete,
-                data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger category-link' %>
+    <%= link_to t('form.button.edit'), edit_user_capital_path(current_user, capital), class: 'btn btn-outline-warning category-link' %>
+    <%= link_to t('form.button.delete'), user_capital_path(current_user, capital), method: :delete,
+                data: { confirm: t('form.confirmation') }, class: 'btn btn-outline-danger category-link' %>
   </div>
 </div>

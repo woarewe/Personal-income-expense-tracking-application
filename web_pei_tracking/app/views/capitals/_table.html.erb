@@ -2,21 +2,21 @@
     <table class="table" id="capitals">
       <thead class="thead-default">
       <tr>
-        <th>Type</th>
-        <th>Value</th>
-        <th>Category</th>
-        <th>Date</th>
-        <th>Note</th>
+        <th><%= t('table.column.type') %></th>
+        <th><%= t('table.column.value') %></th>
+        <th><%= t('table.column.category') %></th>
+        <th><%= t('table.column.date') %></th>
+        <th><%= t('table.column.note') %></th>
       </tr>
       </thead>
       <tbody>
       <%= render partial: 'capitals/capital_row', collection: @capitals %>
       <tr>
-        <th><h3>Total: </h3></th>
+        <th><h3><%= t('table.total') %></h3></th>
         <th><h3><%= total_value(@capitals) %> $</h3></th>
       </tr>
       </tbody>
     </table>
 <% else %>
-    <h4>List is empty!</h4>
+    <h4><%= t('table.empty') %></h4>
 <% end %>

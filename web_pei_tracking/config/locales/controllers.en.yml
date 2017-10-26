@@ -1,0 +1,9 @@
+en:
+  application:
+    alert: 'Error!'
+    notice: 'Successfully!'
+  capitals:
+    notice: 'Transaction has successfully deleted!'
+  categories:
+    notice: 'Category has successfully deleted!'
+

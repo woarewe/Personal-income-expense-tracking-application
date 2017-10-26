@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category.destroy
-    flash[:notice] = 'Category has successfully deleted!'
+    flash[:notice] = t('categories.notice')
     redirect_to root_path
   end
 

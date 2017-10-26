@@ -3,14 +3,14 @@
     <h5> <%= category.title %></h5>
   </div>
   <p class="card-block padding-left">
-    Type: <%= raw type_tag(category) %>
+    <%= t('form.label.type') %><%= raw type_tag(category) %>
   </p>
   <p class="card-block padding-left">
-    Transaction's count: <strong><%= category.capitals.size %></strong>
+    <%= t('category.count') %><strong><%= category.capitals.size %></strong>
   </p>
   <div class="card-footer">
-    <%= link_to 'Edit', edit_user_category_path(current_user, category), class: 'btn btn-outline-warning category-link' %>
-    <%= link_to 'Delete', user_category_path(current_user, category), method: :delete,
-        data: { confirm: 'Are you sure?'}, class: 'btn btn-outline-danger category-link' %>
+    <%= link_to t('form.button.edit'), edit_user_category_path(current_user, category), class: 'btn btn-outline-warning category-link' %>
+    <%= link_to t('form.button.delete'), user_category_path(current_user, category), method: :delete,
+        data: { confirm: t('form.confirmation')}, class: 'btn btn-outline-danger category-link' %>
   </div>
 </div>

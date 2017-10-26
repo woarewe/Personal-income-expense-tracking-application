@@ -4,7 +4,7 @@
     <div class="col-md-8">
       <div class="card text-center">
         <div class="card-header">
-          <strong>Hello!</strong>
+          <strong><%= t('hello') %></strong>
         </div>
         <div class="card-block">
           <br>
@@ -14,19 +14,19 @@
           <br>
         </div>
         <div class="card-footer">
-          You can manage your finances, as well as
-          <%= link_to 'look at the report', user_report_path(current_user) %>.
+          <%= t('user.can') %>
+          <%= link_to t('user.link'), user_report_path(current_user) %>.
         </div>
       </div>
       <div class="manage-block row">
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Categories</h3>
+              <h3><%= t('user.categories.title') %></h3>
             </div>
             <% if current_user.categories.empty? %>
                 <div class="card-footer text-muted">
-                  You don't have categories.
+                  <%= t('user.empty') %>
                 </div>
             <% end %>
           </div>
@@ -35,11 +35,11 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-header">
-              <h3>Transactions</h3>
+              <h3><%= t('user.capitals.title') %></h3>
             </div>
             <% if current_user.capitals.empty? %>
                 <div class="card-footer text-muted">
-                  You don't have transactions.
+                  <%= t('user.empty') %>
                 </div>
             <% end %>
           </div>
