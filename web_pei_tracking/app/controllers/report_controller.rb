@@ -29,7 +29,7 @@ class ReportController < ApplicationController
   end
 
   def set_user
-    @user = User.includes(categories: [:capitals], capitals: [:category])
+    @user = User.includes(:categories, capitals: [:category])
                 .find(params[:user_id])
   end
 end
