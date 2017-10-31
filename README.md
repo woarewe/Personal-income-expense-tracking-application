@@ -1,33 +1,39 @@
-# Требования к проекту
-## 1. Введение
-Название проекта “Personal income/expense tracking application”. 
-Проект представляет собой веб-сайт для ведеения пользователем учёта доходов и расходов.
-## 2. Требование пользователя
-### 2.1 Программные интерфейсы
-* Фраемворки
+# Personal income/expense tracking application
+## 1. Introduction
+Main goal of project is to сreate a simple website using Ruby on Rails framework, latest available
+version. The purpose of the website is to keep personal incomes and
+expenses. 
+## 2. User requirements
+### 2.1 Software interfaces
+* Fraemworks
   * Ruby on Rails
   * Bootstrap
-* Базы данных
+* Databases
   * PostgreSQL
   * Active Record ORM
-* Языки программирования
+* Programming language
   * Ruby
   * JavaScript
-### 2.2 Интерфейс пользователя
-* Главная страница для незарегистрированых пользователей.
-![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Home.png)
-* Форма регистрации.
-![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/New_user.png)
-* Персональная страница пользователя
-![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/User_page.png)
-## 3 Системные требования
-### 3.1 Функциональные требования
-1. Регистрация нового пользователя: при использовании приложения впревые пользователь должен создать новый аккаунт, для чего необходимо ввести личные данные и пароль.
-2. Авторизация: зарегистрированный ранее пользователь должен ввести свой ник и пароль для входа в личный кабинет.
-3. Создание записей о состоянии бюджета, их редактирование.
-3. Просмотр всех записей о состоянии бюджета одновременно на одной странице с возсожностью сортировки.
-### 3.2 Нефункциональные требования
-#### 3.2.1 Атрибуты качества
-1. Удобство. При закрытии сайта авторизованным пользователем и последующем возвращении пользователь должен оставаться авторизованным. Для чего необходимо хранить информацию о пользователе в файлах cookie.
-2. Интерфейс. Интерфейс должен быть простым и понятным, чтобы пользователь с первой попытки смог разобраться с основным функционалом.
-3. Мультиязычность. Приложение должно иметь возможность выбора языка между русским и английским.
+### 2.2 User interface
+* Sign up page.
+![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Sign_up.png)
+* Sign in page.
+![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Sign_in.png)
+* User page.
+![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/User%20page.png)
+* New/Edit category page.
+![alt text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Category_form.png)
+* New/Edit transaction page.
+![alt_text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Add_Edit%20transaction.png)
+* Report page.
+![alt_text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Report.png)
+## 3 System requirements
+* Multi-user support. Simple registration/login/logout functionality: use Devise gem.
+* Add/Edit/Remove expense category. Each category should belong to a given user: categories are not shared between different users.
+* Add/Edit/Remove income category.
+* Add/Edit/Remove expense.
+* Add/Edit/Remove income.
+* Simple report of all expenses and incomes with the ability to search by category and by date period.
+# Analogs
+* Homemoney.ua
+* Easyfinance.ru
