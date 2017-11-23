@@ -1,7 +1,6 @@
 # Personal income/expense tracking application
 ## 1. Introduction
-Main goal of project is to сreate a simple website using Ruby on Rails framework, latest available
-version. The purpose of the website is to keep personal incomes and
+Main goal of project is to сreate a simple website using Ruby on Rails framework. The purpose of the website is to keep personal incomes and
 expenses. 
 ## 2. User requirements
 ### 2.1 Software interfaces
@@ -28,7 +27,7 @@ expenses.
 * Report page.
 ![alt_text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Report.png)
 ## 3 System requirements
-* Multi-user support. Simple registration/login/logout functionality: use Devise gem.
+* Multi-user support. Simple registration/login/logout functionality.
 * Add/Edit/Remove expense category. Each category should belong to a given user: categories are not shared between different users.
 * Add/Edit/Remove income category.
 * Add/Edit/Remove expense.
