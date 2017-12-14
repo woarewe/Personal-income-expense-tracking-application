@@ -26,13 +26,16 @@ expenses.
 ![alt_text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Add_Edit%20transaction.png)
 * Report page.
 ![alt_text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Report.png)
-## 3 System requirements
+## 3 System requirements (functional requirements)
 * Multi-user support. Simple registration/login/logout functionality.
 * Add/Edit/Remove expense category. Each category should belong to a given user: categories are not shared between different users.
 * Add/Edit/Remove income category.
-* Add/Edit/Remove expense.
-* Add/Edit/Remove income.
-* Simple report of all expenses and incomes with the ability to search by category and by date period.
+* Add/Edit/Remove transactions.
+* Simple report of all expenses and incomes with the ability to search by category and by date.
+## 4 Non-functional  requirements
+* As easy as possible interface
+* Safety - user info should be stored in secure environment
+* Stability - application should not "fall" in any cases.
 # Analogs
 * Homemoney.ua
 * Easyfinance.ru
