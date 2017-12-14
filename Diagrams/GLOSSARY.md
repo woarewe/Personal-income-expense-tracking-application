@@ -8,3 +8,5 @@ Money received, especially on a regular basis, for work or through investments.
 The cost incurred in or required for something.
 # Category 
 A group of payments with something common.
+# Transaction
+Income or expense.
