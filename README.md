@@ -28,8 +28,7 @@ expenses.
 ![alt_text](https://github.com/woarewe/Personal-income-expense-tracking-application/blob/master/Mockups/Report.png)
 ## 3 System requirements (functional requirements)
 * Multi-user support. Simple registration/login/logout functionality.
-* Add/Edit/Remove expense category. Each category should belong to a given user: categories are not shared between different users.
-* Add/Edit/Remove income category.
+* Add/Edit/Remove category. Each category should belong to a given user: categories are not shared between different users.
 * Add/Edit/Remove transactions.
 * Simple report of all expenses and incomes with the ability to search by category and by date.
 ## 4 Non-functional  requirements
