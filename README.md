@@ -38,3 +38,14 @@ expenses.
 # Analogs
 * Homemoney.ua
 * Easyfinance.ru
+
+## This is worse:
+* Without mobile version
+* Without the possibility of binding payment systems
+* Low number of operations
+
+## This is better:
+* Page loading speed
+* Easy to use
+* Open source
+
